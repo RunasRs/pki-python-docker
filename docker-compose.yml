@@ -1,0 +1,11 @@
+services:
+  root:
+    build: .
+    container_name: pki
+    hostname: pki
+    restart: always
+    tty: true
+    volumes:
+      - data:/pki/3-Serveurs
+volumes:
+  data:
