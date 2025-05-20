@@ -61,7 +61,7 @@ def check_certificat(paths):
 if __name__ == "__main__":
 
     nom_serveur = input("Veuillez entrer le nom de votre serveur : ")
-    regex = r'^[a-zA-Z0-9.]+$'
+    regex = r'^[A-Za-z0-9_\-\.]+$'
     if re.search(regex, nom_serveur):
         print(f"➡️ : {nom_serveur}")
     else:
