@@ -5,20 +5,20 @@ import subprocess
 def gen_ca(pwd, config, key, crt):
     if os.path.isfile(config):
         os.makedirs(f"{pwd}/2-CA", exist_ok=True)
-        print(f"📁 : {pwd}/2-CA")
+        print(f" {pwd}/2-CA")
         os.makedirs(f"{pwd}/3-Serveurs", exist_ok=True)
-        print(f"📁 : {pwd}/3-Serveurs")
+        print(f" {pwd}/3-Serveurs")
         try:
             subprocess.run([ 'openssl', 'genrsa', '-out', key, '4096'], check=True, stderr=subprocess.DEVNULL)
-            print(f"🔑 : {key}")
+            print(f"key : {key}")
             subprocess.run([ 'openssl', 'req', '-config', config,'-key', key, '-new', '-x509', '-days', '3650', '-sha256', '-out', crt], check=True, stderr=subprocess.DEVNULL)
-            print(f"📜 : {crt}")
+            print(f"crt : {crt}")
 
         except subprocess.CalledProcessError as e:
-            print(f"❌ Erreur OpenSSL : {e}")
+            print(f"Erreur OpenSSL : {e}")
             sys.exit(1)
     else:
-        print(f"❌ {config}")
+        print(f"Erreur : {config} introuvable")
         sys.exit(1)
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ COPY pki/ .
 COPY .env .
 
 RUN apt update && \
-   apt install -y openjdk-17-jdk dos2unix && \
+   apt install -y dos2unix && \
    apt clean all
 
 RUN dos2unix config.sh
