@@ -1,6 +1,3 @@
-
-docker.desktop : https://www.docker.com/products/docker-desktop/
-
 ## Installation
 `PS C:\Users\w11>`
 ```ps
@@ -30,26 +27,28 @@ docker exec -it pki certificat
 ```
 ```
 Veuillez entrer le nom de votre serveur : serveur1.org
-➡️ : serveur1.org
-🔑 : /pki/3-Serveurs/serveur1.org/serveur1.org.key
-📜 : /pki/3-Serveurs/serveur1.org/serveur1.org.crt
-📜 : /pki/3-Serveurs/serveur1.org/ca.crt
-Géréner un certificat .pfx/.p12/.jks pour serveur1.org (6 caractères) (o/n) : o
-Mot de passe pour serveur1.org (pfx/p12/jsk) :
-🔐 : /pki/3-Serveurs/serveur1.org/serveur1.org.pfx
-🔐 : /pki/3-Serveurs/serveur1.org/serveur1.org.p12
-🔐 : /pki/3-Serveurs/serveur1.org/serveur1.org.jks
+ ■ : /pki/3-Serveurs/serveur1.org/serveur1.org.key
+ ▢ : /pki/3-Serveurs/serveur1.org/serveur1.org.crt
+ ▢ : /pki/3-Serveurs/serveur1.org/ca.crt
+Géréner un certificat .pfx pour serveur1.org (6 caractères) (o/n) : o
+Mot de passe pour serveur1.org (pfx) :
+ ▣ : /pki/3-Serveurs/serveur1.org/serveur1.org.pfx
 ```
-![Capture d'écran 2025-04-30 184854](https://github.com/user-attachments/assets/e8b9154c-b249-4035-bc0f-3d5abfbcf73f)
+<img width="1295" height="198" alt="image" src="https://github.com/user-attachments/assets/0153bbd1-aa93-433a-918a-03c3e344b2ff" />
+
 
 ## FQDN sur localhost:
+```powershell
+notepad C:\Windows\System32\drivers\etc\hosts
+```
+```r
+127.0.0.1 serveur1.org
+```
+
 ```sh
 echo '127.0.0.1 serveur1.org' >> /etc/hosts
 ```
-```powershell
-notepad C:\Windows\System32\drivers\etc\hosts
-127.0.0.1 serveur1.org
-```
+
 ## Ajouter l'autorité de certification racine:
 
 ⚙️ : Windows
